@@ -2,7 +2,6 @@ from django.http import JsonResponse, HttpResponse
 from django.views import View
 from rest_framework.views import APIView
 from rest_framework import status
-from . import oracle
 import json
 from rest_framework.permissions import IsAuthenticated
 
