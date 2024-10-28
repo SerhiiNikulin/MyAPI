@@ -1,5 +1,3 @@
-from cgi import print_environ_usage
-
 from django.http import JsonResponse, HttpResponse
 from django.views import View
 from rest_framework.views import APIView
@@ -10,16 +8,9 @@ from rest_framework.permissions import IsAuthenticated
 
 from get_doc.views import GetDoc
 from get_doc_ptah.views import GetDocPtah
-from get_mon.views import get_mon
-from set_price_mon.views import set_price_mon
 from get_pdf_ptah.views import GetPDFPtah
-from get_pdf.views import get_pdf
 from set_doc.views import SetDoc
 from set_delivery.views import SetDelivery
-from get_cert.views import get_cert
-from get_orders.views import get_orders
-from set_doc_state.views import set_docstate
-from get_doc_state.views import get_doc_state
 from get_sql.views import GetSql
 
 import logging
@@ -104,7 +95,6 @@ class Doctitles(APIView):
         method_map = {
             'GETDOC': lambda: GetDoc(request, receptorid).get_doc(),
             'GETDOCPTAH': lambda: GetDocPtah(request, receptorid).get_doc_ptah(),
-            'SET_PRICE_MON': lambda: set_price_mon(request),
             'GETPDFPTAH': lambda: GetPDFPtah(request).get_pdf_ptah(),
             'SET_DOC': lambda: SetDoc(request).set_doc(),
             'SET_DELIVERY': lambda: SetDelivery(request).set_delivery(),
