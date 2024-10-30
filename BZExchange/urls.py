@@ -26,12 +26,4 @@ from . serializers import MyTokenObtainPairView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctitles/', include('_doctitles.urls')),
-    path('optima/', include('_optima.urls')),
-    path('telegram/', include('_telegram_bot.urls')),
-    path('firms_online/', include('_firms_online.urls')),
-    path('tabletki/', include('_tabletki.urls')),
-    path('reports/', include('_reports.urls')),
-    path('token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    # path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    # path('token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 ]
