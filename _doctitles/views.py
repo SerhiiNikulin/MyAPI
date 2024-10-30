@@ -11,6 +11,7 @@ from get_pdf_ptah.views import GetPDFPtah
 from set_doc.views import SetDoc
 from set_delivery.views import SetDelivery
 from get_sql.views import GetSql
+from set_work_period.views import SetWorkPeriod
 
 import logging
 from logging.handlers import RotatingFileHandler
@@ -99,6 +100,9 @@ class Doctitles(APIView):
             'SET_DELIVERY': lambda: SetDelivery(request).set_delivery(),
             'GETSQL': lambda: GetSql(request).get_sql(),
             'SQLRESULT': lambda: GetSql(request).get_sql_results(),
+            'SETWORKPERIOD': lambda: SetWorkPeriod(request).set_work_period(),
+            'SETWORKSTATE': lambda: SetWorkPeriod(request).set_work_state(),
+            'UPDATEWORKCONTENTS': lambda: SetWorkPeriod(request).update_work_contents(),
         }
 
         # Выполнение соответствующей функции из словаря
